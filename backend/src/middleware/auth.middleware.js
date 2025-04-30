@@ -20,7 +20,7 @@ export const protectRoute = async (req, res, next) => {
     req.user = user; // Attach user to request object
     next();
   } catch (error) {
-    console.error(error);
+    console.error(error.message);
     res.status(500).json({ message: "Internal server error" });
   }
 };
